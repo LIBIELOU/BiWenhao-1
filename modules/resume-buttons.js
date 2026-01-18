@@ -2,6 +2,39 @@
 (function() {
     'use strict';
     
+    // 预加载简历资源
+    let resumePreloaded = false;
+    
+    function preloadResumeResources() {
+        if (resumePreloaded) return;
+        
+        console.log('开始预加载简历资源...');
+        
+        // 预加载简历相关的 CSS 和 JS
+        const resources = [
+            '/styles.css',
+            '/modules/resume-buttons.css',
+            '/modules/resume-buttons.js'
+        ];
+        
+        resources.forEach(resource => {
+            const link = document.createElement('link');
+            link.rel = 'prefetch';
+            link.href = resource;
+            document.head.appendChild(link);
+        });
+        
+        resumePreloaded = true;
+        console.log('简历资源预加载完成');
+    }
+    
+    // 页面加载后预加载简历资源
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', preloadResumeResources);
+    } else {
+        preloadResumeResources();
+    }
+    
     // 简历侧边栏切换 - 与 styles.css 中的样式一致
     window.toggleResumeSidebar = function() {
         console.log('toggleResumeSidebar 被调用 (resume-buttons.js)');
