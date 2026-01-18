@@ -1,0 +1,74 @@
+/* 视频内容分析器样式 */
+.video-analyzer-container {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.analyzer-results {
+    margin-top: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.analyzer-results h4 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.analyzer-result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.analyzer-result-item:last-child {
+    border-bottom: none;
+}
+
+.analyzer-result-label {
+    font-weight: 500;
+    color: #666;
+}
+
+.analyzer-result-value {
+    color: #333;
+}
+
+.analyzer-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.analyzer-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.analyzer-actions button.primary {
+    background: #007bff;
+    color: white;
+}
+
+.analyzer-actions button.primary:hover {
+    background: #0056b3;
+}
+
+.analyzer-actions button.secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.analyzer-actions button.secondary:hover {
+    background: #545b62;
+}

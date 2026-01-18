@@ -1,0 +1,125 @@
+/* 内容管理器样式 */
+.content-manager-container {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.content-manager-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+}
+
+.content-manager-tab {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: -2px;
+}
+
+.content-manager-tab:hover {
+    color: #007bff;
+}
+
+.content-manager-tab.active {
+    color: #007bff;
+    border-bottom-color: #007bff;
+}
+
+.content-manager-panel {
+    display: none;
+}
+
+.content-manager-panel.active {
+    display: block;
+}
+
+.content-list {
+    margin-top: 15px;
+}
+
+.content-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+.content-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-item-info {
+    flex: 1;
+}
+
+.content-item-title {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.content-item-meta {
+    font-size: 12px;
+    color: #666;
+}
+
+.content-item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.content-item-actions button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.content-item-actions button.edit {
+    background: #007bff;
+    color: white;
+}
+
+.content-item-actions button.edit:hover {
+    background: #0056b3;
+}
+
+.content-item-actions button.delete {
+    background: #dc3545;
+    color: white;
+}
+
+.content-item-actions button.delete:hover {
+    background: #c82333;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .content-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .content-item-actions {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: flex-end;
+    }
+}

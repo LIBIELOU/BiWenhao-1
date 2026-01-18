@@ -1,0 +1,130 @@
+/* 简历按钮样式 */
+.resume-sidebar {
+    position: fixed;
+    top: 0;
+    right: -500px;
+    width: 500px;
+    height: 100%;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.resume-sidebar.active {
+    right: 0;
+}
+
+.resume-content {
+    padding: 30px;
+}
+
+.resume-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+.resume-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.resume-section {
+    margin-bottom: 25px;
+}
+
+.resume-section h3 {
+    margin: 0 0 15px 0;
+    color: #007bff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.resume-section h3 i {
+    font-size: 16px;
+}
+
+.resume-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.resume-item h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.resume-period {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.resume-company {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.resume-item ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.resume-item li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.resume-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.resume-info p {
+    margin: 8px 0;
+}
+
+.resume-info strong {
+    color: #333;
+}
+
+.resume-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.2s ease;
+}
+
+.resume-close:hover {
+    color: #dc3545;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .resume-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .resume-content {
+        padding: 20px;
+    }
+}

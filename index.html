@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>毕文浩个人作品展示</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=1.0.0">
+    <link rel="stylesheet" href="modules/cos-uploader.css?v=1.0.0">
+    <link rel="stylesheet" href="modules/video-thumbnail-selector.css?v=1.0.0">
+    <link rel="stylesheet" href="modules/video-content-analyzer.css?v=1.0.0">
+    <link rel="stylesheet" href="modules/content-manager.css?v=1.0.0">
+    <link rel="stylesheet" href="modules/resume-buttons.css?v=1.0.0">
+    <!-- 功能模块 -->
+    <script src="modules/cos-uploader.js?v=1.0.0"></script>
+    <script src="modules/playVideoInModal.js?v=static"></script>
+    <script src="modules/video-thumbnail-generator.js?v=1.0.0"></script>
+    <script src="modules/video-content-analyzer.js?v=1.0.0"></script>
+    <script src="modules/content-import-export.js?v=1.0.0"></script>
+    <script src="modules/resume-buttons.js?v=1.0.0"></script>
+    <!-- 缓存破坏和内容同步模块 -->
+    <script src="modules/cache-busting.js?v=1.0.0"></script>
+    <script src="modules/content-sync.js?v=1.0.0"></script>
+    <script src="modules/local-data-sync.js?v=1.0.0"></script>
+<script src="data.js?v=1768571989833"></script>
+</head>
+<body>
+    <!-- 简历测试按钮 -->
+    <div style="position: fixed; top: 10px; right: 10px; z-index: 10001; background: #007bff; color: white; padding: 10px; border-radius: 5px; cursor: pointer; display: none;" onclick="toggleResumeSidebar()">
+        测试简历
+    </div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-video"></i>
+                    <span>毕文浩个人作品展示</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link">作品展示</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">关于我</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">联系方式</a>
+                    </li>
+                    <!-- 管理员按钮已隐藏 -->
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <!-- 幻灯片容器 -->
+            <div class="slideshow-container">
+                <!-- 幻灯片项目 -->
+                <div class="slide active">
+                    <div class="slide-content">
+                        <img src="assets/slides/slide-1.png" alt="作品展示1" class="slide-image">
+                        <div class="slide-overlay">
+                            <div class="hero-content">
+                                <h1 class="hero-title">毕文浩个人作品展示</h1>
+                                <p class="hero-subtitle">探索创意与技术的完美融合</p>
+                                <a href="#portfolio" class="btn btn-primary">查看作品</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="assets/slides/slide-2.png" alt="作品展示2" class="slide-image">
+                        <div class="slide-overlay">
+                            <div class="hero-content">
+                                <h1 class="hero-title">创意视频制作</h1>
+                                <p class="hero-subtitle">专业影像，讲述精彩故事</p>
+                                <a href="#portfolio" class="btn btn-primary">查看作品</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="assets/slides/slide-3.png" alt="作品展示3" class="slide-image">
+                        <div class="slide-overlay">
+                            <div class="hero-content">
+                                <h1 class="hero-title">视觉艺术创作</h1>
+                                <p class="hero-subtitle">用镜头捕捉生活中的美好瞬间</p>
+                                <a href="#portfolio" class="btn btn-primary">查看作品</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 幻灯片导航按钮 -->
+                <button class="slide-btn prev-btn" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slide-btn next-btn" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- 幻灯片指示器 -->
+                <div class="slide-indicators">
+                    <span class="indicator active" onclick="currentSlide(1)"></span>
+                    <span class="indicator" onclick="currentSlide(2)"></span>
+                    <span class="indicator" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <!-- AIGC作品展示区域 -->
+            <div class="portfolio-section aigc-section">
+                <div class="section-header">
+                    <h2 class="section-title">AIGC作品</h2>
+                    <p class="section-subtitle">探索人工智能与创意的完美融合</p>
+                </div>
+                
+                <!-- 二级横向标题分类 -->
+                <div class="aigc-categories-container">
+                    <div class="aigc-category-header">
+                        <h3 class="category-title active" data-category="all">
+                            <span class="category-number">全部分类</span>
+                            <span class="category-underline"></span>
+                        </h3>
+                    </div>
+                    <div class="aigc-category-header">
+                        <h3 class="category-title" data-category="photography">
+                            <span class="category-number">一、</span>
+                            <span class="category-name">AI摄影作品</span>
+                            <span class="category-underline"></span>
+                        </h3>
+                    </div>
+                    <div class="aigc-category-header">
+                        <h3 class="category-title" data-category="video">
+                            <span class="category-number">二、</span>
+                            <span class="category-name">AI影片</span>
+                            <span class="category-underline"></span>
+                        </h3>
+                    </div>
+                    <div class="aigc-category-header">
+                        <h3 class="category-title" data-category="animation">
+                            <span class="category-number">三、</span>
+                            <span class="category-name">AI动画设计</span>
+                            <span class="category-underline"></span>
+                        </h3>
+                    </div>
+                </div>
+                
+                <div class="aigc-grid-container">
+                    <div class="aigc-grid" id="aigcGrid">
+                        <!-- AIGC作品将通过JavaScript动态生成 -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 视频作品展示区域 -->
+            <div class="portfolio-section video-section">
+                <div class="section-header">
+                    <h2 class="section-title">视频作品</h2>
+                    <p class="section-subtitle">专业视频制作与创意影像</p>
+                </div>
+                
+                <div class="video-showcase">
+                    <div class="featured-video">
+                        <div class="video-container">
+                            <video poster="assets/video-thumbnails/video-thumb-1.jpg" preload="none">
+                                <source src="#" type="video/mp4">
+                                您的浏览器不支持 HTML5 视频播放。
+                            </video>
+                            <div class="video-controls">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>精选视频作品</h3>
+                            <p>展示专业视频制作技术与创意 storytelling</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-grid">
+                        <div class="video-item">
+                            <div class="video-thumbnail" onclick="playVideoInModal('sample-video-url-1', '商业广告', '品牌创意视频制作')">
+                                <img src="assets/video-thumbnails/video-thumb-2.jpg" alt="视频缩略图" loading="lazy">
+                            </div>
+                            <h4>商业广告</h4>
+                            <p>品牌创意视频制作</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail" onclick="playVideoInModal('sample-video-url-2', '纪录片', '人文纪实影像作品')">
+                                <img src="assets/video-thumbnails/video-thumb-3.jpg" alt="视频缩略图" loading="lazy">
+                            </div>
+                            <h4>纪录片</h4>
+                            <p>人文纪实影像作品</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail" onclick="playVideoInModal('sample-video-url-3', '艺术短片', '实验性视觉创作')">
+                                <img src="assets/video-thumbnails/video-thumb-4.jpg" alt="视频缩略图" loading="lazy">
+                            </div>
+                            <h4>艺术短片</h4>
+                            <p>实验性视觉创作</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 特效作品展示区域 -->
+            <div class="portfolio-section effects-section">
+                <div class="section-header">
+                    <h2 class="section-title">特效作品</h2>
+                    <p class="section-subtitle">视觉特效与后期制作</p>
+                </div>
+                
+                <div class="effects-showcase">
+                    <div class="effect-item">
+                        <div class="effect-preview" onclick="playVideoInModal('https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4', '3D建模与渲染', '高质量三维建模与渲染技术')">
+                            <img src="assets/effects/effect-1.jpg" alt="特效预览" loading="lazy">
+                            <div class="effect-hover">
+                                <div class="effect-info">
+                                    <h3>3D建模与渲染</h3>
+                                    <p>高质量三维建模与渲染技术</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="effect-item">
+                        <div class="effect-preview" onclick="playVideoInModal('https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4', '粒子特效', '动态粒子系统与视觉效果')">
+                            <img src="assets/effects/effect-2.jpg" alt="特效预览" loading="lazy">
+                            <div class="effect-hover">
+                                <div class="effect-info">
+                                    <h3>粒子特效</h3>
+                                    <p>动态粒子系统与视觉效果</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="effect-item">
+                        <div class="effect-preview" onclick="playVideoInModal('https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4', '合成与调色', '专业合成与色彩分级技术')">
+                            <img src="assets/effects/effect-3.jpg" alt="特效预览" loading="lazy">
+                            <div class="effect-hover">
+                                <div class="effect-info">
+                                    <h3>合成与调色</h3>
+                                    <p>专业合成与色彩分级技术</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 过往账号展示区域 -->
+            <div class="portfolio-section accounts-section">
+                <div class="section-header">
+                    <h2 class="section-title">过往账号</h2>
+                    <p class="section-subtitle">社交媒体平台作品展示</p>
+                </div>
+                
+                <div class="accounts-grid">
+                    <div class="account-card">
+                        <div class="account-header">
+                            <div class="platform-icon">
+                                <i class="fab fa-bilibili"></i>
+                            </div>
+                            <div class="account-info">
+                                <h3>Bilibili</h3>
+                                <p>@创作者账号</p>
+                            </div>
+                            <button class="follow-btn">关注</button>
+                        </div>
+                        <div class="account-stats">
+                            <div class="stat">
+                                <span class="stat-number">12.5K</span>
+                                <span class="stat-label">粉丝</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">89</span>
+                                <span class="stat-label">作品</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">234K</span>
+                                <span class="stat-label">播放量</span>
+                            </div>
+                        </div>
+                        <div class="account-preview">
+                            <a href="https://www.bilibili.com" target="_blank" class="account-preview-link">
+                                <img src="assets/accounts/account-1.png" alt="作品预览" loading="lazy">
+                                <div class="account-preview-overlay">
+                                    <div class="preview-actions">
+                                        <button class="btn btn-primary view-details-btn" onclick="event.stopPropagation(); viewAccountDetails(1)">
+                                            <i class="fas fa-eye"></i> 查看详情
+                                        </button>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="account-card">
+                        <div class="account-header">
+                            <div class="platform-icon">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                            <div class="account-info">
+                                <h3>YouTube</h3>
+                                <p>@CreatorAccount</p>
+                            </div>
+                            <button class="follow-btn">订阅</button>
+                        </div>
+                        <div class="account-stats">
+                            <div class="stat">
+                                <span class="stat-number">8.3K</span>
+                                <span class="stat-label">订阅者</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">56</span>
+                                <span class="stat-label">视频</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">156K</span>
+                                <span class="stat-label">观看量</span>
+                            </div>
+                        </div>
+                        <div class="account-preview">
+                            <a href="https://www.youtube.com" target="_blank" class="account-preview-link">
+                                <img src="assets/accounts/account-2.png" alt="作品预览" loading="lazy">
+                                <div class="account-preview-overlay">
+                                    <div class="preview-actions">
+                                        <button class="btn btn-primary view-details-btn" onclick="event.stopPropagation(); viewAccountDetails(2)">
+                                            <i class="fas fa-eye"></i> 查看详情
+                                        </button>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="account-card">
+                        <div class="account-header">
+                            <div class="platform-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="account-info">
+                                <h3>Instagram</h3>
+                                <p>@creative_artist</p>
+                            </div>
+                            <button class="follow-btn">关注</button>
+                        </div>
+                        <div class="account-stats">
+                            <div class="stat">
+                                <span class="stat-number">15.7K</span>
+                                <span class="stat-label">粉丝</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">234</span>
+                                <span class="stat-label">帖子</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">45.2K</span>
+                                <span class="stat-label">平均点赞</span>
+                            </div>
+                        </div>
+                        <div class="account-preview">
+                            <a href="https://www.instagram.com" target="_blank" class="account-preview-link">
+                                <img src="assets/accounts/account-3.png" alt="作品预览" loading="lazy">
+                                <div class="account-preview-overlay">
+                                    <div class="preview-actions">
+                                        <button class="btn btn-primary view-details-btn" onclick="event.stopPropagation(); viewAccountDetails(3)">
+                                            <i class="fas fa-eye"></i> 查看详情
+                                        </button>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">关于我</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>我是一名充满激情的视频创作者，专注于通过镜头讲述动人的故事。凭借多年的专业经验和创意视野，我致力于将每个项目打造成独特的视觉体验。</p>
+                        <p>无论是商业广告、艺术短片还是纪录片，我都用心对待每一个细节，确保作品能够触动观众的心灵。</p>
+                        <div class="skills">
+                            <h3>专业技能</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">视频剪辑</span>
+                                <span class="skill-tag">调色</span>
+                                <span class="skill-tag">特效制作</span>
+                                <span class="skill-tag">摄影</span>
+                                <span class="skill-tag">剧本创作</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">联系方式</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span id="contact-email">yourname@example.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span id="contact-phone">+86 123 4567 8900</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="contact-location">中国，北京</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-bilibili"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 毕文浩个人作品展示. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    
+
+    <!-- 视频模态框 -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="video-container">
+                <div class="video-player">
+                    <video id="videoPlayer" controls>
+                        您的浏览器不支持 HTML5 视频播放。
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3 id="videoTitle"></h3>
+                    <p id="videoDescription"></p>
+                    <div class="video-meta">
+                        <span id="videoDuration"></span>
+                        <span id="videoYear"></span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- 管理员模态框已隐藏 -->
+
+    <!-- 简历侧边栏 -->
+    <div id="resumeSidebar" class="resume-sidebar">
+        <div class="resume-content">
+            <div class="resume-header">
+                <h2>个人简历</h2>
+            </div>
+            
+            <div class="resume-section">
+                <h3 class="editable-title" data-field="personal-info-title"><i class="fas fa-user"></i> <span>个人信息</span></h3>
+                <div class="resume-info">
+                    <p><strong>姓名：</strong><span class="editable-content" data-field="name">毕文浩</span></p>
+                    <p><strong>性别：</strong><span class="editable-content" data-field="gender">男</span></p>
+                    <p><strong>年龄：</strong><span class="editable-content" data-field="age">28岁</span></p>
+                    <p><strong>工作时长：</strong><span class="editable-content" data-field="work-years">7年</span></p>
+                    <p><strong>求职意向：</strong><span class="editable-content" data-field="job-intent">视频剪辑</span></p>
+                    <p><strong>期望薪资：</strong><span class="editable-content" data-field="salary">20-24K</span></p>
+                    <p><strong>期望城市：</strong><span class="editable-content" data-field="city">上海</span></p>
+                    <p><strong>电话：</strong><span class="editable-content" data-field="phone">13283545328</span></p>
+                    <p><strong>微信号：</strong><span class="editable-content" data-field="wechat">18734762449</span></p>
+                    <p><strong>邮箱：</strong><span class="editable-content" data-field="email">1563345360@qq.com</span></p>
+                </div>
+            </div>
+            
+            <div class="resume-section">
+                <h3 class="editable-title" data-field="work-exp-title"><i class="fas fa-briefcase"></i> <span>工作经历</span></h3>
+                <div class="resume-item">
+                    <h4 class="editable-content" data-field="job1-title">新媒体运营</h4>
+                    <p class="resume-period"><span class="editable-content" data-field="job1-period">2024.11 - 2025.12</span></p>
+                    <p class="resume-company"><span class="editable-content" data-field="job1-company">上海天帧科技</span></p>
+                    <ul>
+                        <li><span class="editable-content" data-field="job1-desc1">服务金融客户（长春农商银行、宁波银行、吉林农商银行、民生银行），负责视觉设计</span></li>
+                        <li><span class="editable-content" data-field="job1-desc2">深度理解金融行业"专业严谨+高端简约"的视觉调性，完成品牌视频宣传、新媒体视频传播等项目</span></li>
+                        <li><span class="editable-content" data-field="job1-desc3">熟练运用MidJourney、Stable Diffusion、Canva AI、Comfyui等工具，独立搭建客户专属AI视觉图库及模板库</span></li>
+                        <li><span class="editable-content" data-field="job1-desc4">完成宁波银行、吉林农商行数字分身项目视频制作，优化数字人工作流程</span></li>
+                        <li><span class="editable-content" data-field="job1-desc5">优化完善Comfy ui工作流模板30+，为公司网站AI应用提供SOP</span></li>
+                        <li><span class="editable-content" data-field="job1-desc6">独立完成13个lora训练，包含(Wan 2.2、Qwen-image、Kontext、FLUX、Z-image)</span></li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4 class="editable-content" data-field="job2-title">新媒体运营</h4>
+                    <p class="resume-period"><span class="editable-content" data-field="job2-period">2024.03 - 2024.10</span></p>
+                    <p class="resume-company"><span class="editable-content" data-field="job2-company">上海太岳税务师事务所有限公司</span></p>
+                    <ul>
+                        <li><span class="editable-content" data-field="job2-desc1">负责公司短视频内容输出，从脚本到拍摄，以及后期剪辑福利完成</span></li>
+                        <li><span class="editable-content" data-field="job2-desc2">挖掘公司相关内容，从0到1筹划公司矩阵账号，平台以抖音/视频号/小红书为主</span></li>
+                        <li><span class="editable-content" data-field="job2-desc3">研究抖音实时热点，总结爆品内容的核心，有效制定符合账号的爆款视频素材内容框架</span></li>
+                        <li><span class="editable-content" data-field="job2-desc4">负责统筹安排抖音账号内容，完善拍摄脚本质量，组织拍摄调度，与团队沟通协调</span></li>
+                        <li><span class="editable-content" data-field="job2-desc5">负责公司短视频账号的投放推广、粉丝维护、数据分析、运营报告</span></li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4 class="editable-content" data-field="job3-title">新媒体运营负责人</h4>
+                    <p class="resume-period"><span class="editable-content" data-field="job3-period">2022.03 - 2024.01</span></p>
+                    <p class="resume-company"><span class="editable-content" data-field="job3-company">西安诚食居食品有限责任公司</span></p>
+                    <ul>
+                        <li><span class="editable-content" data-field="job3-desc1">主导公司品牌账号从0-1-10的整个流程，负责公司账号的视频拍摄剪辑制作，直播间搭建运营</span></li>
+                        <li><span class="editable-content" data-field="job3-desc2">负责新媒体平台（如抖音、快手、视频号等）的视频拍摄、剪辑和后期制作，确保视频质量和效果</span></li>
+                        <li><span class="editable-content" data-field="job3-desc3">创作并编写创意脚本文案，根据视频投放效果进行优化，对最终视频质量负责</span></li>
+                        <li><span class="editable-content" data-field="job3-desc4">负责抖音直播间搭建，直播伴侣，obs的直播设置，直播间场景搭建，主播话术脚本编撰，电商运营</span></li>
+                        <li><span class="editable-content" data-field="job3-desc5">负责抖音渠道的整体运营，制定和落实年度、月度销售目标及计划</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="resume-section">
+                <h3 class="editable-title" data-field="edu-title"><i class="fas fa-graduation-cap"></i> <span>教育背景</span></h3>
+                <div class="resume-item">
+                    <h4 class="editable-content" data-field="edu-major">动画专业</h4>
+                    <p class="resume-period"><span class="editable-content" data-field="edu-period">2016 - 2020</span></p>
+                    <p class="resume-company"><span class="editable-content" data-field="edu-school">太原理工大学现代科技学院</span></p>
+                    <p><span class="editable-content" data-field="edu-degree">本科学历</span></p>
+                </div>
+            </div>
+            
+            <div class="resume-section">
+                <h3 class="editable-title" data-field="skills-title"><i class="fas fa-tools"></i> <span>专业技能</span></h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h4 class="editable-content" data-field="skill1-title">视频制作软件</h4>
+                        <div class="skill-tags">
+                            <span class="editable-content" data-field="skill1-item1">Adobe After Effects</span>
+                            <span class="editable-content" data-field="skill1-item2">Adobe Premiere Pro</span>
+                            <span class="editable-content" data-field="skill1-item3">DaVinci Resolve Studio</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h4 class="editable-content" data-field="skill2-title">AIGC工具</h4>
+                        <div class="skill-tags">
+                            <span class="editable-content" data-field="skill2-item1">Midjourney</span>
+                            <span class="editable-content" data-field="skill2-item2">Stable Diffusion</span>
+                            <span class="editable-content" data-field="skill2-item3">ComfyUI</span>
+                            <span class="editable-content" data-field="skill2-item4">Canva AI</span>
+                            <span class="editable-content" data-field="skill2-item5">ChatGPT</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h4 class="editable-content" data-field="skill3-title">摄影摄像设备</h4>
+                        <div class="skill-tags">
+                            <span class="editable-content" data-field="skill3-item1">HC-PV100GK</span>
+                            <span class="editable-content" data-field="skill3-item2">SONY Alpha 6400</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resume-section">
+                <h3 class="editable-title" data-field="advantages-title"><i class="fas fa-star"></i> <span>个人优势</span></h3>
+                <div class="resume-item">
+                    <ul>
+                        <li><span class="editable-content" data-field="advantage1">拥有从事新媒体行业4年经验，拥有丰富的短视频账号创作与运营经验</span></li>
+                        <li><span class="editable-content" data-field="advantage2">熟练使用视频专业制作软件 Adobe After Effects，Adobe Premiere Pro，DaVinci Resolve Studio等</span></li>
+                        <li><span class="editable-content" data-field="advantage3">拥有超过3年的摄影与摄像经验，拍摄制作过各类作品</span></li>
+                        <li><span class="editable-content" data-field="advantage4">能独立完成视频脚本编写、素材拍摄，后期剪辑制作工作</span></li>
+                        <li><span class="editable-content" data-field="advantage5">能够洞察新技术与新趋势，对于Midjourney，Stable Diffusion等AIGC工具能够熟练掌握，对于ComfyUI工作流有一定了解</span></li>
+                        <li><span class="editable-content" data-field="advantage6">能够高效地进行团队沟通，协作，按时完成工作任务</span></li>
+                        <li><span class="editable-content" data-field="advantage7">个人运营小说类短视频账号粉丝达2万，空余时间兼职剪辑：婚礼，影视解说，宣传片，剧情类短片</span></li>
+                        <li><span class="editable-content" data-field="advantage8">剪映特效设计师，摄图网签约设计师</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="resume-section">
+                <h3 class="editable-title" data-field="projects-title"><i class="fas fa-trophy"></i> <span>项目经历</span></h3>
+                <div class="resume-item">
+                    <h4 class="editable-content" data-field="project1-title">小说推文账号运营</h4>
+                    <p class="resume-period"><span class="editable-content" data-field="project1-period">2023.09 - 2025.12</span></p>
+                    <p class="resume-company"><span class="editable-content" data-field="project1-role">短视频运营</span></p>
+                    <ul>
+                        <li><span class="editable-content" data-field="project1-desc1">负责QQ阅读小说推文个人账号全流程运营，聚焦小说脚本打磨</span></li>
+                        <li><span class="editable-content" data-field="project1-desc2">借助ChatGPT工具优化小说章节内容，提升内容吸引力</span></li>
+                        <li><span class="editable-content" data-field="project1-desc3">运用Midjourney、Stable Diffusion等AIGC工具，训练个人风格Lora</span></li>
+                        <li><span class="editable-content" data-field="project1-desc4">账号累计沉淀粉丝2W+，用户转化数突破1000+</span></li>
+                        <li><span class="editable-content" data-field="project1-desc5">累计制作推广视频186条，其中72条视频播放量超10万</span></li>
+                        <li><span class="editable-content" data-field="project1-desc6">单条视频自然流量峰值超100万，单条爆款视频点赞量突破6万</span></li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4 class="editable-content" data-field="project2-title">腾讯秒剪推广</h4>
+                    <p class="resume-period"><span class="editable-content" data-field="project2-period">2021.08 - 2021.12</span></p>
+                    <p class="resume-company"><span class="editable-content" data-field="project2-role">负责人</span></p>
+                    <ul>
+                        <li><span class="editable-content" data-field="project2-desc1">腾讯微信视频号达人运营，腾讯秒剪用户推广</span></li>
+                        <li><span class="editable-content" data-field="project2-desc2">管理视频号的个人创作者</span></li>
+                        <li><span class="editable-content" data-field="project2-desc3">推广腾讯秒剪app使用</span></li>
+                        <li><span class="editable-content" data-field="project2-desc4">审核优化创作者视频内容，提出修改意见，拍摄建议</span></li>
+                        <li><span class="editable-content" data-field="project2-desc5">统筹线上创作者过百人，审核调整优化作品3000多条</span></li>
+                        <li><span class="editable-content" data-field="project2-desc6">创作者最佳视频播放量15万，累计为秒剪带来超100位优秀创作者</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="resume-section">
+                <h3 class="editable-title" data-field="certificates-title"><i class="fas fa-certificate"></i> <span>资格证书</span></h3>
+                <div class="resume-item">
+                    <p><span class="editable-content" data-field="certificate1">• 驾驶证 C1</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 简历背景遮罩 -->
+    <div class="resume-overlay" id="resumeOverlay"></div>
+    
+    <!-- 简历切换按钮 -->
+    <button class="resume-toggle" id="resumeToggleBtn" onclick="toggleResumeSidebarWithButtons()" style="display: block !important; visibility: visible !important; opacity: 1 !important; z-index: 10001 !important;">
+        <i class="fas fa-user-circle icon-open"></i>
+        <i class="fas fa-times-circle icon-close" style="display: none;"></i>
+        <span class="btn-text">我的简历</span>
+    </button>
+    
+    <!-- 保存简历按钮 -->
+    <button class="save-resume-btn" id="saveResumeBtn" onclick="saveResumeContent()" style="display: none;">
+        <i class="fas fa-save"></i>
+        <span>保存简历</span>
+    </button>
+    
+    <!-- 分享简历按钮 -->
+    <button class="share-resume-btn" id="shareResumeBtn" onclick="generateShareLink()" style="display: none;">
+        <i class="fas fa-share-alt"></i>
+        <span>分享简历</span>
+    </button>
+
+    <!-- 缓存破坏脚本 -->
+    <script src="modules/cache-busting.js"></script>
+    <!-- 内容同步脚本 - 优化版本 -->
+    <script>
+        // 防止重复加载和冲突
+        if (window.contentSyncLoaded) {
+            console.log('内容同步脚本已加载，跳过重复加载');
+        } else {
+            window.contentSyncLoaded = true;
+            
+            // 增强的跨浏览器同步机制
+            (function() {
+                'use strict';
+                
+                let lastSyncTime = 0;
+                let lastContentHash = '';
+                const SYNC_INTERVAL = 15000; // 15秒
+                
+                // 计算内容哈希
+                function calculateContentHash() {
+                    const keys = ['portfolioData', 'slideData', 'aboutContent', 'contactData', 'resumeContent'];
+                    let content = '';
+                    keys.forEach(key => {
+                        const value = localStorage.getItem(key);
+                        if (value) {
+                            content += value;
+                        }
+                    });
+                    return btoa(content).slice(0, 16); // 简单哈希
+                }
+                
+                // 检查服务器内容更新
+                async function syncContent() {
+                    const currentTime = Date.now();
+                    
+                    // 避免频繁同步
+                    if (currentTime - lastSyncTime < SYNC_INTERVAL) {
+                        return;
+                    }
+                    
+                    try {
+                        // 检查服务器内容时间戳
+                        const timestampResponse = await fetch('/api/get-content-timestamp');
+                        const timestampData = await timestampResponse.json();
+                        
+                        if (timestampData.timestamp && timestampData.timestamp > lastSyncTime) {
+                            console.log('检测到服务器内容更新，检查是否需要同步...');
+                            
+                            // 获取服务器内容哈希
+                            const contentResponse = await fetch('/api/get-website-content');
+                            if (contentResponse.ok) {
+                                const serverContent = await contentResponse.json();
+                                const serverHash = JSON.stringify(serverContent).slice(0, 100);
+                                
+                                // 如果内容有变化，提示用户同步
+                                if (serverHash !== lastContentHash) {
+                                    console.log('服务器内容已更新，提示用户同步');
+                                    
+                                    // 显示同步提示
+                                    if (window.LocalDataSync && window.LocalDataSync.showNotification) {
+                                        window.LocalDataSync.showNotification('检测到新内容，点击"同步到首页"更新', 'info');
+                                    }
+                                    
+                                    // 创建同步提示按钮
+                                    showSyncNotification();
+                                }
+                            }
+                        }
+                        
+                        lastSyncTime = timestampData.timestamp || currentTime;
+                    } catch (error) {
+                        console.log('检查服务器更新时出错:', error);
+                    }
+                }
+                
+                // 显示同步通知
+                function showSyncNotification() {
+                    // 避免重复显示
+                    if (document.getElementById('sync-notification')) {
+                        return;
+                    }
+                    
+                    const notification = document.createElement('div');
+                    notification.id = 'sync-notification';
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 80px;
+                        right: 20px;
+                        background: #17a2b8;
+                        color: white;
+                        padding: 15px 20px;
+                        border-radius: 5px;
+                        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                        z-index: 10001;
+                        max-width: 300px;
+                    `;
+                    
+                    notification.innerHTML = `
+                        <div style="font-weight: bold; margin-bottom: 10px;">🔄 发现新内容</div>
+                        <div style="margin-bottom: 15px; font-size: 14px;">服务器上有更新的内容，是否立即同步？</div>
+                        <div style="display: flex; gap: 10px;">
+                            <button id="sync-now-btn" style="background: #28a745; color: white; border: none; padding: 5px 15px; border-radius: 3px; cursor: pointer;">立即同步</button>
+                            <button id="sync-later-btn" style="background: #6c757d; color: white; border: none; padding: 5px 15px; border-radius: 3px; cursor: pointer;">稍后</button>
+                        </div>
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    // 绑定事件
+                    document.getElementById('sync-now-btn').onclick = function() {
+                        if (window.RefreshControl) {
+                            window.RefreshControl.forceSyncFromServer();
+                        }
+                        document.body.removeChild(notification);
+                    };
+                    
+                    document.getElementById('sync-later-btn').onclick = function() {
+                        document.body.removeChild(notification);
+                    };
+                    
+                    // 10秒后自动消失
+                    setTimeout(() => {
+                        if (document.getElementById('sync-notification')) {
+                            document.body.removeChild(notification);
+                        }
+                    }, 10000);
+                }
+                
+                // 页面可见性变化时同步
+                document.addEventListener('visibilitychange', function() {
+                    if (!document.hidden) {
+                        syncContent();
+                    }
+                });
+                
+                // 定期同步
+                setInterval(syncContent, SYNC_INTERVAL);
+                
+                // 初始化时记录当前内容哈希
+                lastContentHash = calculateContentHash();
+                
+                console.log('增强版跨浏览器同步管理器已加载');
+            })();
+        }
+    </script>
+    <!-- 本地数据同步脚本 - 优化版本 -->
+    <script>
+        // 防止重复加载和冲突
+        if (window.localDataSyncLoaded) {
+            console.log('本地数据同步脚本已加载，跳过重复加载');
+        } else {
+            window.localDataSyncLoaded = true;
+            
+            // 简化的本地数据同步
+            (function() {
+                'use strict';
+                
+                const SYNC_INTERVAL = 30000; // 30秒
+                let lastSyncTime = 0;
+                let syncTimer = null;
+                let isSyncing = false;
+                
+                function readAllLocalStorageData() {
+                    const data = {
+                        timestamp: new Date().toISOString(),
+                        data: {}
+                    };
+                    
+                    const storageKeys = [
+                        'portfolioData', 'imageData', 'contentData', 'slideData',
+                        'resumeContent', 'aboutContent', 'cosConfig', 'contactData'
+                    ];
+                    
+                    storageKeys.forEach(key => {
+                        try {
+                            const value = localStorage.getItem(key);
+                            if (value !== null) {
+                                data.data[key] = value;
+                            }
+                        } catch (error) {
+                            console.warn(`读取本地存储数据失败 [${key}]:`, error);
+                        }
+                    });
+                    
+                    return data;
+                }
+                
+                function showNotification(message, type = 'info') {
+                    // 检查是否已有通知容器
+                    let notificationContainer = document.getElementById('notification-container');
+                    if (!notificationContainer) {
+                        notificationContainer = document.createElement('div');
+                        notificationContainer.id = 'notification-container';
+                        notificationContainer.style.cssText = `
+                            position: fixed;
+                            top: 20px;
+                            right: 20px;
+                            z-index: 10000;
+                            max-width: 300px;
+                        `;
+                        document.body.appendChild(notificationContainer);
+                    }
+                    
+                    // 创建通知元素
+                    const notification = document.createElement('div');
+                    notification.style.cssText = `
+                        padding: 12px 16px;
+                        margin-bottom: 10px;
+                        border-radius: 4px;
+                        color: white;
+                        font-size: 14px;
+                        opacity: 0;
+                        transform: translateX(100%);
+                        transition: all 0.3s ease;
+                        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                    `;
+                    
+                    // 根据类型设置背景色
+                    switch (type) {
+                        case 'success':
+                            notification.style.backgroundColor = '#28a745';
+                            break;
+                        case 'error':
+                            notification.style.backgroundColor = '#dc3545';
+                            break;
+                        case 'warning':
+                            notification.style.backgroundColor = '#ffc107';
+                            notification.style.color = '#212529';
+                            break;
+                        default:
+                            notification.style.backgroundColor = '#17a2b8';
+                    }
+                    
+                    notification.textContent = message;
+                    notificationContainer.appendChild(notification);
+                    
+                    // 显示动画
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 10);
+                    
+                    // 自动隐藏
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                notification.parentNode.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                }
+                
+                async function saveDataToProjectFile(data) {
+                    try {
+                        console.log('开始同步数据到服务器...', data);
+                        
+                        const response = await fetch('/api/save-local-data', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        });
+                        
+                        console.log('服务器响应状态:', response.status, response.statusText);
+                        
+                        if (!response.ok) {
+                            const errorText = await response.text();
+                            console.error('服务器响应错误:', errorText);
+                            throw new Error(`保存失败: ${response.status} - ${errorText}`);
+                        }
+                        
+                        const result = await response.json();
+                        console.log('数据已同步到项目文件:', result);
+                        
+                        // 显示同步成功通知
+                        if (result.message && window.showNotification) {
+                            window.showNotification(result.message, 'success');
+                        }
+                        
+                        return true;
+                    } catch (error) {
+                        console.error('保存数据到项目文件失败:', error);
+                        console.error('错误详情:', error.name, error.message);
+                        
+                        // 检查是否是网络错误
+                        if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                            // 根据配置决定是否显示网络错误提醒
+                            const showNetworkErrors = localStorage.getItem('showNetworkErrors') === 'true';
+                            if (showNetworkErrors && window.showNotification) {
+                                window.showNotification('网络连接失败，请检查服务器状态', 'error');
+                            }
+                            console.error('网络连接失败，请检查服务器状态');
+                        } else {
+                            // 静态网站版本：禁用数据同步失败提示
+                            // if (window.showNotification) {
+                            //     window.showNotification('数据同步失败: ' + error.message, 'error');
+                            // }
+                        }
+                        
+                        return false;
+                    }
+                }
+                
+                async function syncDataToProject() {
+                    if (isSyncing) {
+                        console.log('正在同步中，跳过本次同步');
+                        return;
+                    }
+                    
+                    isSyncing = true;
+                    
+                    try {
+                        const localData = readAllLocalStorageData();
+                        const hasData = Object.keys(localData.data).length > 0;
+                        
+                        if (!hasData) {
+                            console.log('没有数据需要同步');
+                            return;
+                        }
+                        
+                        const success = await saveDataToProjectFile(localData);
+                        
+                        if (success) {
+                            lastSyncTime = Date.now();
+                            console.log('数据同步完成');
+                        }
+                    } catch (error) {
+                        console.error('数据同步失败:', error);
+                    } finally {
+                        isSyncing = false;
+                    }
+                }
+                
+                function startAutoSync() {
+                    syncDataToProject();
+                    
+                    if (syncTimer) {
+                        clearInterval(syncTimer);
+                    }
+                    
+                    syncTimer = setInterval(() => {
+                        syncDataToProject();
+                    }, SYNC_INTERVAL);
+                    
+                    console.log('已启动自动数据同步，间隔:', SYNC_INTERVAL / 1000, '秒');
+                }
+                
+                // 页面加载时初始化
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', startAutoSync);
+                } else {
+                    startAutoSync();
+                }
+                
+                // 监听本地存储变化
+                window.addEventListener('storage', (e) => {
+                    const storageKeys = [
+                        'portfolioData', 'imageData', 'contentData', 'slideData',
+                        'resumeContent', 'aboutContent', 'cosConfig', 'contactData'
+                    ];
+                    
+                    if (storageKeys.includes(e.key)) {
+                        console.log('检测到本地存储变化:', e.key);
+                        setTimeout(() => {
+                            syncDataToProject();
+                        }, 1000);
+                    }
+                });
+                
+                // 创建全局LocalDataSync对象
+                window.LocalDataSync = {
+                    init: startAutoSync,
+                    sync: syncDataToProject,
+                    manualSync: syncDataToProject,
+                    showNotification: showNotification,
+                    getStatus: () => ({
+                        lastSyncTime,
+                        isSyncing,
+                        storageKeys: [
+                            'portfolioData', 'imageData', 'contentData', 'slideData',
+                            'resumeContent', 'aboutContent', 'cosConfig', 'contactData'
+                        ]
+                    })
+                };
+                
+                console.log('优化版本地数据同步模块已加载');
+            })();
+        }
+    </script>
+    <!-- 简历按钮脚本 -->
+    <script src="modules/resume-buttons.js"></script>
+    
+    <!-- 内容导入导出脚本 -->
+    <script src="modules/content-import-export.js"></script>
+    
+    <!-- 全局通知函数 -->
+    <script>
+        // 全局通知函数
+        window.showNotification = function(message, type = 'info') {
+            // 检查是否已有通知容器
+            let notificationContainer = document.getElementById('notification-container');
+            if (!notificationContainer) {
+                notificationContainer = document.createElement('div');
+                notificationContainer.id = 'notification-container';
+                notificationContainer.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    z-index: 10000;
+                    max-width: 300px;
+                `;
+                document.body.appendChild(notificationContainer);
+            }
+            
+            // 创建通知元素
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                padding: 12px 16px;
+                margin-bottom: 10px;
+                border-radius: 4px;
+                color: white;
+                font-size: 14px;
+                opacity: 0;
+                transform: translateX(100%);
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            `;
+            
+            // 根据类型设置背景色
+            switch (type) {
+                case 'success':
+                    notification.style.backgroundColor = '#28a745';
+                    break;
+                case 'error':
+                    notification.style.backgroundColor = '#dc3545';
+                    break;
+                case 'warning':
+                    notification.style.backgroundColor = '#ffc107';
+                    notification.style.color = '#212529';
+                    break;
+                default:
+                    notification.style.backgroundColor = '#17a2b8';
+            }
+            
+            notification.textContent = message;
+            notificationContainer.appendChild(notification);
+            
+            // 显示动画
+            setTimeout(() => {
+                notification.style.opacity = '1';
+                notification.style.transform = 'translateX(0)';
+            }, 10);
+            
+            // 自动隐藏
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        };
+        
+        // 添加全局刷新控制
+        window.RefreshControl = {
+            // 停止所有自动刷新
+            stopAutoRefresh: function() {
+                sessionStorage.setItem('stopAutoRefresh', 'true');
+                console.log('已停止自动刷新');
+            },
+            
+            // 启用自动刷新
+            enableAutoRefresh: function() {
+                sessionStorage.removeItem('stopAutoRefresh');
+                sessionStorage.removeItem('contentSyncReloaded');
+                sessionStorage.removeItem('pageReloaded');
+                sessionStorage.removeItem('dataLoaded');
+                console.log('已启用自动刷新');
+            },
+            
+            // 检查刷新状态
+            checkStatus: function() {
+                const status = {
+                    stopAutoRefresh: sessionStorage.getItem('stopAutoRefresh'),
+                    contentSyncReloaded: sessionStorage.getItem('contentSyncReloaded'),
+                    pageReloaded: sessionStorage.getItem('pageReloaded'),
+                    dataLoaded: sessionStorage.getItem('dataLoaded')
+                };
+                console.log('刷新状态:', status);
+                return status;
+            },
+            
+            // 清除所有刷新标记
+            clearAllFlags: function() {
+                sessionStorage.removeItem('stopAutoRefresh');
+                sessionStorage.removeItem('contentSyncReloaded');
+                sessionStorage.removeItem('pageReloaded');
+                sessionStorage.removeItem('dataLoaded');
+                console.log('已清除所有刷新标记');
+            },
+            
+            // 强制从服务器同步内容
+            forceSyncFromServer: async function() {
+                try {
+                    const response = await fetch('/api/get-website-content');
+                    if (response.ok) {
+                        const content = await response.json();
+                        
+                        // 更新本地存储
+                        if (content.portfolio) {
+                            localStorage.setItem('portfolioData', JSON.stringify(content.portfolio));
+                        }
+                        if (content.website) {
+                            if (content.website.hero) {
+                                localStorage.setItem('slideData', JSON.stringify(content.website.hero.slides));
+                            }
+                            if (content.website.about) {
+                                localStorage.setItem('aboutContent', JSON.stringify(content.website.about));
+                            }
+                            if (content.website.contact) {
+                                localStorage.setItem('contactData', JSON.stringify(content.website.contact));
+                            }
+                        }
+                        if (content.resume) {
+                            localStorage.setItem('resumeContent', JSON.stringify(content.resume));
+                        }
+                        
+                        console.log('已从服务器同步内容');
+                        if (window.LocalDataSync && window.LocalDataSync.showNotification) {
+                            window.LocalDataSync.showNotification('已从服务器同步最新内容', 'success');
+                        }
+                        
+                        // 刷新页面显示
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 1000);
+                        
+                        return true;
+                    } else {
+                        throw new Error('获取服务器内容失败');
+                    }
+                } catch (error) {
+                                        console.error('从服务器同步失败:', error);
+                                        // 根据配置决定是否显示网络错误提醒
+                                        if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                                            const showNetworkErrors = localStorage.getItem('showNetworkErrors') === 'true';
+                                            if (showNetworkErrors && window.LocalDataSync && window.LocalDataSync.showNotification) {
+                                                window.LocalDataSync.showNotification('网络连接失败，无法从服务器同步', 'error');
+                                            }
+                                            console.error('网络连接失败，无法从服务器同步');
+                                        } else if (window.LocalDataSync && window.LocalDataSync.showNotification) {
+                                            window.LocalDataSync.showNotification('同步失败: ' + error.message, 'error');
+                                        }
+                                        return false;
+                                    }            }
+        };
+        
+        // 网络连接检查
+        async function checkServerConnection() {
+            try {
+                const response = await fetch('/api/get-content-timestamp', {
+                    method: 'GET',
+                    cache: 'no-cache'
+                });
+                
+                if (response.ok) {
+                    console.log('✅ 服务器连接正常');
+                    return true;
+                } else {
+                    console.warn('⚠️ 服务器响应异常:', response.status);
+                    return false;
+                }
+            } catch (error) {
+                console.error('❌ 服务器连接失败:', error);
+                // 隐藏网络连接失败的提醒，只在控制台记录
+                return false;
+            }
+        }
+        
+        // 页面加载时的初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 清除过期的刷新标记
+            const reloadTime = sessionStorage.getItem('reloadTime');
+            if (reloadTime) {
+                const timeDiff = Date.now() - parseInt(reloadTime);
+                if (timeDiff > 60000) { // 超过1分钟的标记清除
+                    sessionStorage.removeItem('contentSyncReloaded');
+                    sessionStorage.removeItem('pageReloaded');
+                    sessionStorage.removeItem('dataLoaded');
+                }
+            }
+            
+            // 记录当前刷新时间
+            sessionStorage.setItem('reloadTime', Date.now().toString());
+            
+            // 检查服务器连接
+            checkServerConnection();
+            
+            console.log('刷新控制已初始化');
+            console.log('使用 RefreshControl.stopAutoRefresh() 停止自动刷新');
+            console.log('使用 RefreshControl.enableAutoRefresh() 启用自动刷新');
+            console.log('使用 RefreshControl.checkStatus() 检查刷新状态');
+        });
+    </script>
+    <!-- 简历按钮样式 -->
+    <link rel="stylesheet" href="resume-buttons.css?v=1.0.0">
+    
+
+    <!-- 管理员面板 -->
+    <div id="adminPanel" class="admin-panel" style="display: none;">
+        <div class="admin-header">
+            <h2>作品管理面板</h2>
+            <div class="admin-header-actions">
+                <button id="backToHomeBtn" class="btn btn-secondary">返回主页</button>
+                <button id="syncDataBtn" class="btn btn-secondary">同步数据</button>
+                <button id="configCOSBtn" class="btn btn-secondary">配置腾讯云COS</button>
+                <button id="logoutBtn" class="btn btn-secondary">退出登录</button>
+            </div>
+        </div>
+        <div class="admin-content">
+            
+                <div class="admin-section">
+                <h3>上传新作品</h3>
+                <div id="cosStatus" class="cos-status">
+                    <i class="fas fa-info-circle"></i>
+                    <span id="cosStatusText">检查腾讯云COS配置中...</span>
+                </div>
+                <form id="uploadForm" class="upload-form">
+                    <div class="form-group">
+                        <label for="mediaTitle">作品名称</label>
+                        <input type="text" id="mediaTitle" placeholder="请输入作品名称" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mediaType">作品类型</label>
+                        <select id="mediaType" required>
+                            <option value="">请选择作品类型</option>
+                            <option value="video">视频作品</option>
+                            <option value="image">图片作品</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="uploadMethod">添加方式</label>
+                        <select id="uploadMethod" required>
+                            <option value="file">上传文件</option>
+                            <option value="link">添加链接</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="videoDurationGroup">
+                        <label for="videoDuration">作品时长</label>
+                        <input type="text" id="videoDuration" placeholder="自动识别或手动输入 (例如: 3:45)">
+                    </div>
+                    <div class="form-group" id="mediaFileGroup">
+                        <label for="mediaFile">上传文件</label>
+                        <input type="file" id="mediaFile" accept="video/*,image/*">
+                        <small id="fileTypeHint">支持视频和图片文件</small>
+                    </div>
+                    <div class="form-group" id="mediaLinkGroup" style="display: none;">
+                        <label for="mediaLink">视频链接</label>
+                        <input type="url" id="mediaLink" placeholder="请输入视频链接 (例如: https://example.com/video.mp4)">
+                        <small>输入视频链接后,系统将自动提取首帧作为封面并保存到本地</small>
+                    </div>
+                    <div class="form-group" id="mediaUrlGroup" style="display: none;">
+                        <label for="mediaUrl">文件URL</label>
+                        <input type="url" id="mediaUrl" readonly>
+                    </div>
+                    <button type="submit" class="btn btn-primary">添加作品</button>
+                </form>
+            </div>
+            <div class="admin-section">
+                <h3>视频作品管理</h3>
+                <div id="videoList" class="video-list">
+                    <!-- 视频列表将通过JavaScript动态生成 -->
+                </div>
+            </div>
+            <div class="admin-section">
+                <h3>图片作品管理</h3>
+                <div id="imageList" class="image-list">
+                    <!-- 图片列表将通过JavaScript动态生成 -->
+                </div>
+            </div>
+            <div class="admin-section">
+                <h3>联系方式管理</h3>
+                <form id="contactForm" class="upload-form">
+                    <div class="form-group">
+                        <label for="contactEmail">邮箱</label>
+                        <input type="email" id="contactEmail" placeholder="yourname@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPhone">电话</label>
+                        <input type="text" id="contactPhone" placeholder="+86 123 4567 8900">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactLocation">地址</label>
+                        <input type="text" id="contactLocation" placeholder="中国，北京">
+                    </div>
+                    <button type="submit" class="btn btn-primary">保存联系方式</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 腾讯云COS上传功能脚本 -->
+    <script src="modules/cos-uploader.js?v=1.0.0"></script>
+    <script src="modules/video-thumbnail-generator.js?v=1.0.0"></script>
+    <script src="modules/video-content-analyzer.js?v=1.0.0"></script>
+    
+    <script src="script.js?v=static"></script>
+    
+    <!-- 简历功能备用脚本 -->
+    <script>
+        // 确保简历功能正常工作
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('页面加载完成，初始化简历功能');
+            
+            // 简历切换按钮
+            const resumeToggle = document.querySelector('.resume-toggle');
+            if (resumeToggle) {
+                resumeToggle.onclick = function() {
+                    console.log('简历按钮被点击');
+                    const sidebar = document.getElementById('resumeSidebar');
+                    const overlay = document.getElementById('resumeOverlay');
+                    
+                    if (!sidebar || !overlay) {
+                        console.error('找不到简历元素');
+                        return;
+                    }
+                    
+                    if (sidebar.classList.contains('open')) {
+                        sidebar.classList.remove('open');
+                        overlay.classList.remove('show');
+                        resumeToggle.classList.remove('active');
+                    } else {
+                        sidebar.classList.add('open');
+                        overlay.classList.add('show');
+                        resumeToggle.classList.add('active');
+                    }
+                };
+                console.log('简历按钮事件已绑定');
+            }
+            
+            // 遮罩点击关闭
+            const resumeOverlay = document.getElementById('resumeOverlay');
+            if (resumeOverlay) {
+                resumeOverlay.onclick = function() {
+                    const sidebar = document.getElementById('resumeSidebar');
+                    const toggleBtn = document.querySelector('.resume-toggle');
+                    
+                    if (sidebar && toggleBtn) {
+                        sidebar.classList.remove('open');
+                        resumeOverlay.classList.remove('show');
+                        toggleBtn.classList.remove('active');
+                    }
+                };
+            }
+        });
+
+        // 图片懒加载功能 - 自动为所有图片添加懒加载
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('初始化图片懒加载功能...');
+
+            // 自动为所有图片添加懒加载
+            const allImages = document.querySelectorAll('img');
+            allImages.forEach(img => {
+                // 跳过已经设置 data-src 的图片
+                if (!img.dataset.src && img.src) {
+                    img.dataset.src = img.src;
+                    img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E';
+                    img.classList.add('lazy-loading');
+                }
+            });
+
+            // 使用 IntersectionObserver 实现懒加载
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.removeAttribute('data-src');
+                                img.classList.remove('lazy-loading');
+                                img.classList.add('loaded');
+                                observer.unobserve(img);
+                            }
+                        }
+                    });
+                }, {
+                    rootMargin: '50px 0px', // 提前 50px 开始加载
+                    threshold: 0.01
+                });
+
+                const lazyImages = document.querySelectorAll('img[data-src]');
+                lazyImages.forEach(img => {
+                    imageObserver.observe(img);
+                });
+
+                console.log(`已为 ${lazyImages.length} 张图片启用懒加载`);
+            } else {
+                // 降级方案：直接加载所有图片
+                const lazyImages = document.querySelectorAll('img[data-src]');
+                lazyImages.forEach(img => {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    img.classList.remove('lazy-loading');
+                    img.classList.add('loaded');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
